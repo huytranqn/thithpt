@@ -13,6 +13,24 @@
 
 Route::get('/', 'HomeController@index');
 
+Route::get('/question', 'ExamController@index');
+
+Route::get('/exam', 'ExamController@index');
+
+Route::get('/listexam', 'ExamController@listexam');
+
+Route::get('/subject', 'SubjectController@index');
+
+Route::get('/subject/addsub', 'SubjectController@add');
+
+Route::get('/student', 'StudentController@index');
+
+Route::get('/student/addstu', 'StudentController@add');
+
+Route::get('/question', 'QuestionController@index');
+
+Route::get('/question/addque', 'QuestionController@add');
+
 
 
 
