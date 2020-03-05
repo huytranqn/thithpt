@@ -18,7 +18,7 @@
         <div class="row">
             <div class="col-xs-12">
                 <div class="box box-primary">
-                    <div class="box-header" style="text-align: height: 50px;line-height: 50px;white-space: nowrap;">
+                    <div class="box-header" style="text-align: aligin; height: 50px;line-height: 50px;white-space: nowrap;">
                         <h2 class="box-title">Danh sách đề thi</h2>
                         <div class="pull-right">
                             <a href="{{ asset ('/exam/addexam ') }}" class="btn btn-app"> <i class="fa  fa-plus"></i> Thêm mới</a>
