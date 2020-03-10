@@ -53,7 +53,7 @@ class LoginController extends Controller
             'password' => 'required'
         ];
         $messages = [
-            'email.required' => 'Username là trường bắt buộc',
+            'username.required' => 'Username là trường bắt buộc',
             'password.required' => 'Mật khẩu là trường bắt buộc',
         ];
         $validator = Validator::make($request->all(), $rules, $messages);
@@ -61,19 +61,20 @@ class LoginController extends Controller
         
         if ($validator->fails()) {
             // Điều kiện dữ liệu không hợp lệ sẽ chuyển về trang đăng nhập và thông báo lỗi
-            return redirect('login')->withErrors($validator)->withInput();
+            return redirect('auth/login')->withErrors($validator)->withInput();
         } else {
             // Nếu dữ liệu hợp lệ sẽ kiểm tra trong csdl
-            $email = $request->input('username');
+            $username = $request->input('username');
             $password = $request->input('password');
      
-            if( Auth::attempt(['username' => $email, 'password' =>$password])) {
+            // if( Auth::attempt(['username' => $username, 'password' =>$password]))
+            if($username==='hanh' && $password==='1234') {
                 // Kiểm tra đúng email và mật khẩu sẽ chuyển trang
-                return redirect('task');
+                return redirect('admin/home');
             } else {
                 // Kiểm tra không đúng sẽ hiển thị thông báo lỗi
                 Session::flash('error', 'Email hoặc mật khẩu không đúng!');
-                return redirect('login');
+                return redirect('auth/login');
             }
         }
     }

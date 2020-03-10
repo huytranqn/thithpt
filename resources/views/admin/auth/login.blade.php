@@ -51,20 +51,20 @@
 									<div class="form-group">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> 
-											<input class="form-control" placeholder="Email" name="email" type="text" value="{{ old('email') }}" autofocus>
+											<input class="form-control" placeholder="Username" name="username" id="username" type="text" value="{{ old('username') }}" autofocus>
 										</div>
 									</div>
 									<div class="form-group">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-											<input class="form-control" placeholder="Mật khẩu" name="password" type="password" value="">
+											<input class="form-control" placeholder="Mật khẩu" name="password" id="password" type="password" value="">
 										</div>
 									</div>
 									<div class="form-group">
-										<input type="submit" class="btn btn-lg btn-primary btn-block" value="Đăng nhập">
+										<input type="submit" class="btn btn-lg btn-primary btn-block" id="btn_login" value="Đăng nhập">
 									</div>
 									<div class="login-help">
-										<a href="/{{ url('/register') }}" >Đăng ký</a> - <a href="#" >Quên mật khẩu</a>
+										<a href="{{ url('admin/auth/register') }}" >Đăng ký</a> - <a href="#" >Quên mật khẩu</a>
 									</div>
 								</div>
 							</div>
