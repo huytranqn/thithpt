@@ -14,25 +14,25 @@
 
 Route::get('/', 'Auth\LoginController@getLogin');
 
-Route::get('/home', 'HomeController@index');
+Route::get('/home', 'Admin\HomeController@index');
 
-Route::get('/question', 'ExamController@index');
+Route::get('/question', 'Admin\ExamController@index');
 
-Route::get('/exam', 'ExamController@index');
+Route::get('/exam', 'Admin\ExamController@index');
 
-Route::get('/listexam', 'ExamController@listexam');
+Route::get('/listexam', 'Admin\ExamController@listexam');
 
-Route::get('/subject', 'SubjectController@index');
+Route::get('/subject', 'Admin\SubjectController@index');
 
-Route::get('/subject/addsub', 'SubjectController@add');
+Route::get('/subject/addsub', 'Admin\SubjectController@add');
 
-Route::get('/student', 'StudentController@index');
+Route::get('/student', 'Admin\StudentController@index');
 
-Route::get('/student/addstu', 'StudentController@add');
+Route::get('/student/addstu', 'Admin\StudentController@add');
 
-Route::get('/question', 'QuestionController@index');
+Route::get('/question', 'Admin\QuestionController@index');
 
-Route::get('/question/addque', 'QuestionController@add');
+Route::get('/question/addque', 'Admin\QuestionController@add');
 
 Route::get('model/select-all', function () {
     $data=App\User::all()->tojSON();
