@@ -56,8 +56,8 @@
                                     <td>{{ $item->cmnd}}</td>
                                     <td> 
                                         <?php 
-                                            $subject=DB::table('subjects')->where('id',$item["list_subject"]);
-                                            echo $subject->name;
+                                           // $subject=DB::table('subjects')->where('id',$item["list_subject"]);
+                                           // echo $subject->name;
                                         ?>
                                     </td>
                                     <td>
