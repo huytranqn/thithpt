@@ -11,13 +11,10 @@
 |
 */
 
-<<<<<<< HEAD
-Route::get('/', 'Admin\HomeController@index');
-=======
+
 Route::get('/', 'Auth\LoginController@getLogin');
 
 Route::get('/home', 'HomeController@index');
->>>>>>> 4d13e9adda4f4f5d3b5d40131a9ff4695f12627e
 
 Route::get('/question', 'ExamController@index');
 
