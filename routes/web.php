@@ -13,7 +13,7 @@
 //client route
 Route::get('/', 'Client\HomeController@index');
 //admin route
-Route::get('/admin/', 'Auth\LoginController@getLogin');
+Route::get('/admin', 'Auth\LoginController@getLogin');
 
 Route::get('/admin/home', 'Admin\HomeController@index');
 
