@@ -1,4 +1,3 @@
-@extends('admin.share.master')
 @section('content')
 <?php //Hiển thị thông báo thành công?>
 @if ( Session::has('success') )
@@ -38,7 +37,7 @@
 		<div class="col-sm-6 col-md-4 col-md-offset-4">
 			<div class="panel panel-default">
 				<div class="panel-body">
-					<form role="form" action="{{ url('/login') }}" method="POST">
+					<form role="form" method="POST">
 						{!! csrf_field() !!}
 						<fieldset>
 							<div class="row">
@@ -50,7 +49,7 @@
 								<div class="col-sm-12 col-md-10  col-md-offset-1 ">
 									<div class="form-group">
 										<div class="input-group">
-											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> 
+											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 											<input class="form-control" placeholder="Username" name="username" id="username" type="text" value="{{ old('username') }}" autofocus>
 										</div>
 									</div>

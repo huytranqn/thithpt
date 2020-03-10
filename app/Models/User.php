@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'id','fullname', 'gender', 'namsinh','cmnd','list_subject'
+        'id','username', 'password', 'fullname'
     ];
 
     /**
@@ -37,7 +37,4 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function list_student(){
-        $list=User::all()->get();
-    }
 }

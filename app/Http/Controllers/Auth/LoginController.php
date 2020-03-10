@@ -9,7 +9,9 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Session;
+use App\User ;
 use Symfony\Component\HttpFoundation\Session\Session as HttpFoundationSessionSession;
 
 class LoginController extends Controller
@@ -44,6 +46,9 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
     public function getLogin() {
+
+        // $data['user']= User::all();
+        // var_dump($data);
         return view('admin.auth.login',['title'=>'Login']);
     }
     public function postLogin(Request $request) {
@@ -57,23 +62,29 @@ class LoginController extends Controller
             'password.required' => 'Mật khẩu là trường bắt buộc',
         ];
         $validator = Validator::make($request->all(), $rules, $messages);
-        
-        
+
+
         if ($validator->fails()) {
             // Điều kiện dữ liệu không hợp lệ sẽ chuyển về trang đăng nhập và thông báo lỗi
-            return redirect('auth/login')->withErrors($validator)->withInput();
+            return redirect('admin')->withErrors($validator)->withInput();
         } else {
             // Nếu dữ liệu hợp lệ sẽ kiểm tra trong csdl
+            // $username = Request::get('username');
+            // $password = Request::get('password');
             $username = $request->input('username');
             $password = $request->input('password');
-     
-            // if( Auth::attempt(['username' => $username, 'password' =>$password]))
-            if($username==='hanh' && $password==='1234') {
+            // $credentials = [
+            //     'username' => $request['username'],
+            //     'password' => $request['password'],
+            // ];
+
+            if( Auth::attempt((array('username' => $username, 'password' => $password)))){
+            // if($username==='hanh' && $password==='1234') {
                 // Kiểm tra đúng email và mật khẩu sẽ chuyển trang
                 return redirect('admin/home');
             } else {
                 // Kiểm tra không đúng sẽ hiển thị thông báo lỗi
-                Session::flash('error', 'Email hoặc mật khẩu không đúng!');
+                Session::flash('error', 'Tên đăng nhập hoặc mật khẩu không đúng!');
                 return redirect('admin');
             }
         }

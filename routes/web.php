@@ -15,11 +15,13 @@ Route::get('/', 'Client\HomeController@index');
 //admin route
 Route::get('/admin', 'Auth\LoginController@getLogin');
 
+// Route::get('/admin', 'Auth\LoginController@getLogout');
+
 Route::get('/admin/home', 'Admin\HomeController@index');
 
 Route::get('/admin/question', 'Admin\ExamController@index');
 
-Route::post('/login', 'Auth\LoginController@postLogin');
+Route::post('/admin', 'Auth\LoginController@postLogin');
 
 Route::get('/admin/exam', 'Admin\ExamController@index');
 

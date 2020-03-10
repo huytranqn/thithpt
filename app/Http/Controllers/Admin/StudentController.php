@@ -15,7 +15,7 @@ class StudentController extends Controller
         $data['student']=User::all();
         //var_dump($data);
         //$data['namsinh']=$data->namsinh->format('dd/mm/YYYY');
-        return view('admin.student.student',[ 'title' => 'Học Sinh'],$data);      
+        return view('admin.student.student',[ 'title' => 'Học Sinh'],$data);
     }
 
     public function add()
