@@ -16,10 +16,20 @@
         <div class="row">
             <div class="col-xs-12">
                 <div class="box box-primary">
-                    <div class="box-header">
+                    {{-- <div class="box-header">
                         <h3 class="box-title">Danh sách môn học</h3>
                         <div class="pull-right">
                             <a href="{{ asset ('/subject/addsub ') }}" class="btn btn-info "> <i class="fa  fa-plus"></i> Thêm mới</a>
+                        </div>
+                    </div> --}}
+                    <div class="box-header" style="text-align: height: 50px;line-height: 50px;white-space: nowrap;">
+                        <h3 class="box-title">Danh sách môn học</h3>
+                        <div class="pull-right">
+                            <a class="btn btn-app ">
+                                <input type="file" id="exampleInputFile">
+                            </a>
+                            <a class="btn btn-app "><i class="glyphicon glyphicon-import"></i>Import</a>
+                            <a class="btn btn-app "><i class="glyphicon glyphicon-export"></i>Export</a>
                         </div>
                     </div>
 

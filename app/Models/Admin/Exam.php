@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace App\Models\Admin;
 
 use Illuminate\Database\Eloquent\Model;
 
-class List_exam extends Model
+class Exam extends Model
 {
     //
 }
