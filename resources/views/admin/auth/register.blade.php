@@ -52,7 +52,7 @@
 						<div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-								<input class="form-control" placeholder="Email" name="email" type="text" value="{{ old('email') }}">
+								<input class="form-control" placeholder="Emaile" name="email" type="text" value="{{ old('email') }}">
 							</div>
 						</div>
 						<div class="form-group">

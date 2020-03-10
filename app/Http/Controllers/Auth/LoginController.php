@@ -70,7 +70,7 @@ class LoginController extends Controller
             // if( Auth::attempt(['username' => $username, 'password' =>$password]))
             if($username==='hanh' && $password==='1234') {
                 // Kiểm tra đúng email và mật khẩu sẽ chuyển trang
-                return redirect('admin/home/dashboard');
+                return redirect('admin/home');
             } else {
                 // Kiểm tra không đúng sẽ hiển thị thông báo lỗi
                 Session::flash('error', 'Email hoặc mật khẩu không đúng!');
