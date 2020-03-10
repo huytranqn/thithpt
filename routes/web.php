@@ -10,29 +10,30 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+//client route
+Route::get('/', 'Client\HomeController@index');
+//admin route
+Route::get('/admin/', 'Auth\LoginController@getLogin');
 
+Route::get('/admin/home', 'Admin\HomeController@index');
 
-Route::get('/', 'Auth\LoginController@getLogin');
+Route::get('/admin/question', 'Admin\ExamController@index');
 
-Route::get('/home', 'Admin\HomeController@index');
+Route::get('/admin/exam', 'Admin\ExamController@index');
 
-Route::get('/question', 'Admin\ExamController@index');
+Route::get('/admin/listexam', 'Admin\ExamController@listexam');
 
-Route::get('/exam', 'Admin\ExamController@index');
+Route::get('/admin/subject', 'Admin\SubjectController@index');
 
-Route::get('/listexam', 'Admin\ExamController@listexam');
+Route::get('/admin/subject/addsub', 'Admin\SubjectController@add');
 
-Route::get('/subject', 'Admin\SubjectController@index');
+Route::get('/admin/student', 'Admin\StudentController@index');
 
-Route::get('/subject/addsub', 'Admin\SubjectController@add');
+Route::get('/admin/student/addstu', 'Admin\StudentController@add');
 
-Route::get('/student', 'Admin\StudentController@index');
+Route::get('/admin/question', 'Admin\QuestionController@index');
 
-Route::get('/student/addstu', 'Admin\StudentController@add');
-
-Route::get('/question', 'Admin\QuestionController@index');
-
-Route::get('/question/addque', 'Admin\QuestionController@add');
+Route::get('/admin/question/addque', 'Admin\QuestionController@add');
 
 Route::get('model/select-all', function () {
     $data=App\User::all()->tojSON();
