@@ -38,39 +38,40 @@
                         <thead>
                             <tr>
                                 <th>STT</th>
-                                <th>Ảnh</th>
                                 <th>Tên</th>
                                 <th>Ngày sinh</th>
-                                <th>Địa chỉ</th>
-                                <th>SĐT</th>
+                                <th>Giới tính</th>
                                 <th>CMND</th>
+                                <th>Môn Thi</th>
                                 <th>Công cụ</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>qq</td>
-                                <td>Internet Explorer 4.0
-                                </td>
-                                <td>Win 95+</td>
-                                <td> 4</td>
-                                <td>Internet Explorer 4.0
-                                </td>
-                                <td>Win 95+</td>
-                                <td> 4</td>
-                                <td>
-                                    <i title="Sửa" class="fa fa-pencil-square-o" style="margin-right: 5px;margin-left: 5px;"></i>
-                                    <i title=" Hiện " class="fa fa-eye"> </i>
-                                    <i title=" Ẩn " class="fa fa-eye-slash"> </i>
-                                    <i title=" Xóa " class="fa fa-trash-o " style="color: darkred; "></i>
-
-                                </td>
-                            </tr>
+                            @foreach ($student as $item )
+                                <tr>
+                                    <td>{{ $item->id}}</td>
+                                    <td>{{ $item->fullname}}</td>
+                                    <td>{{ $item->namsinh}}</td>
+                                    <td>{{ $item->gender}}</td>
+                                    <td>{{ $item->cmnd}}</td>
+                                    <td> 
+                                        <?php 
+                                            $subject=DB::table('subjects')->where('id',$item["list_subject"]);
+                                            echo $subject->name;
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <i title="Sửa" class="fa fa-pencil-square-o" style="margin-right: 5px;margin-left: 5px;"></i>
+                                        <i title=" Hiện " class="fa fa-eye"> </i>
+                                        <i title=" Ẩn " class="fa fa-eye-slash"> </i>
+                                        <i title=" Xóa " class="fa fa-trash-o " style="color: darkred; "></i>
+                                    </td>
+                                </tr>
+                            @endforeach    
                         </tbody>
                     </table>
                 </div>
                 <!-- /.box-body -->
-
             </div>
             <!-- /.box -->
         </div>

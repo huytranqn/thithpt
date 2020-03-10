@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'Admin\HomeController@index');
 
 Route::get('/question', 'ExamController@index');
 
@@ -31,6 +31,11 @@ Route::get('/question', 'QuestionController@index');
 
 Route::get('/question/addque', 'QuestionController@add');
 
-
+Route::get('model/select-all', function () {
+    $data=App\User::all()->tojSON();
+    echo"<pre>";
+    print_r($data);
+    echo"<pre>";
+});
 
 
