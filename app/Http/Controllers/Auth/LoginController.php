@@ -72,7 +72,7 @@ class LoginController extends Controller
                 return redirect('task');
             } else {
                 // Kiểm tra không đúng sẽ hiển thị thông báo lỗi
-                Session::flash('error', 'Email hoặc mật khẩu không đúng!');
+                $request->session()->flash('error', 'Email hoặc mật khẩu không đúng!');
                 return redirect('login');
             }
         }
