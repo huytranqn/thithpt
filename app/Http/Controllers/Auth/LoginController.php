@@ -74,7 +74,7 @@ class LoginController extends Controller
             } else {
                 // Kiểm tra không đúng sẽ hiển thị thông báo lỗi
                 Session::flash('error', 'Email hoặc mật khẩu không đúng!');
-                return redirect('auth/login');
+                return redirect('admin');
             }
         }
     }
