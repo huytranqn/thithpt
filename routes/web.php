@@ -14,6 +14,8 @@
 
 Route::get('/', 'Auth\LoginController@getLogin');
 
+Route::post('/login', 'Auth\LoginController@postLogin');
+
 Route::get('/home', 'HomeController@index');
 
 Route::get('/question', 'ExamController@index');
@@ -22,7 +24,7 @@ Route::get('/exam', 'ExamController@index');
 
 Route::get('/listexam', 'ExamController@listexam');
 
-Route::get('/subject', 'SubjectController@index');
+Route::get('/subject', 'subjectController@index');
 
 Route::get('/subject/addsub', 'SubjectController@add');
 
