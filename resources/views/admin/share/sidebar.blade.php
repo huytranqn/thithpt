@@ -25,9 +25,9 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
-            <li><a href="{{ url ('/subject') }}"><i class="fa fa-book"></i> <span>Môn Học</span></a></li>
-            <li><a href="{{ url ('/student') }}"><i class="fa fa-group"></i> <span>Học Sinh</span></a></li>
-            <li><a href="{{ asset ('/question') }}"><i class="fa fa-question-circle"></i> Câu hỏi</a></li>
+            <li><a href="{{ url ('admin/subject') }}"><i class="fa fa-book"></i> <span>Môn Học</span></a></li>
+            <li><a href="{{ url ('admin/student') }}"><i class="fa fa-group"></i> <span>Học Sinh</span></a></li>
+            <li><a href="{{ asset ('admin/question') }}"><i class="fa fa-question-circle"></i> Câu hỏi</a></li>
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-file"></i>
@@ -37,8 +37,8 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{ asset ('exam') }}"><i class="fa fa-circle-o"></i> Danh sách đề thi</a></li>
-                    <li><a href="{{ asset ('listexam') }}"><i class="fa fa-circle-o"></i> Danh sách thi</a></li>
+                    <li><a href="{{ asset ('admin/exam') }}"><i class="fa fa-circle-o"></i> Danh sách đề thi</a></li>
+                    <li><a href="{{ asset ('admin/listexam') }}"><i class="fa fa-circle-o"></i> Danh sách thi</a></li>
                 </ul>
             </li>
             <li class="treeview">
@@ -50,8 +50,8 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{ asset ('task') }}"><i class="fa fa-circle-o"></i> Bài làm</a></li>
-                    <li><a href="{{ asset ('result') }}"><i class="fa fa-circle-o"></i> Kết quả bài</a></li>
+                    <li><a href="{{ asset ('admin/task') }}"><i class="fa fa-circle-o"></i> Bài làm</a></li>
+                    <li><a href="{{ asset ('admin/result') }}"><i class="fa fa-circle-o"></i> Kết quả bài</a></li>
                 </ul>
             </li>
     </section>

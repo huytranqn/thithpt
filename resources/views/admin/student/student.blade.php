@@ -47,23 +47,28 @@
                             </tr>
                         </thead>
                         <tbody>
+                            
                             @foreach ($student as $item )
+                                
                                 <tr>
                                     <td>{{ $item->id}}</td>
                                     <td>{{ $item->fullname}}</td>
                                     <td>{{ $item->namsinh}}</td>
-                                    <td>{{ $item->gender}}</td>
-                                    <td>{{ $item->cmnd}}</td>
-                                    <td> 
-                                        <?php 
-                                           // $subject=DB::table('subjects')->where('id',$item["list_subject"]);
-                                           // echo $subject->name;
-                                        ?>
+                                    <td>
+                                        @if ($item['gender']==1) Nam
+                                        @else Nữ
+                                        @endif
+                                     
                                     </td>
+                                    <td>{{ $item->cmnd}}</td>
+                                    <td>{{ $item->list_subject}} </td>
                                     <td>
                                         <i title="Sửa" class="fa fa-pencil-square-o" style="margin-right: 5px;margin-left: 5px;"></i>
-                                        <i title=" Hiện " class="fa fa-eye"> </i>
-                                        <i title=" Ẩn " class="fa fa-eye-slash"> </i>
+                                        
+                                        @if ($item['isActive']==1) <i title=" Hiện " class="fa fa-eye"> </i>
+                                        @else <i title=" Ẩn " class="fa fa-eye-slash"> </i>
+                                        @endif
+                                        
                                         <i title=" Xóa " class="fa fa-trash-o " style="color: darkred; "></i>
                                     </td>
                                 </tr>
