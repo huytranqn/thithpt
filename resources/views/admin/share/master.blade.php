@@ -3,6 +3,7 @@
     <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="csrf-token" content="{{ csrf_token() }}" />
   <title>Admin | {{ $title }}</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -296,10 +297,22 @@
 <!-- iCheck -->
 <script src="{{ asset ('public/admin/plugins/iCheck/icheck.min.js')}}"></script>
 <!-- page script -->
+<<<<<<< HEAD
+<script src="{{ asset ('resources/js/student.js') }}"></script>
+=======
+
+
+
+<script src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.print.min.js"></script>
+
+>>>>>>> d2f0e083594a9a2eefd627a6749f58db52a92e28
 <script>
     $(function() {
-        $('#example1').DataTable()
-        $('#example2').DataTable({
+      $('#example1').DataTable()
+      $('#example2').DataTable({
             'paging': true,
             'lengthChange': false,
             'searching': false,

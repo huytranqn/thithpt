@@ -16,7 +16,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'id','username', 'password', 'fullname'
+        'username', 'password' ,
+        'id','fullname', 'gender', 'namsinh','cmnd','list_subject'
     ];
 
     /**
@@ -24,9 +25,7 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $hidden = [
-        'username', 'password' ,'remember_token',
-    ];
+
 
     /**
      * The attributes that should be cast to native types.
@@ -37,4 +36,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function list_student(){
+        $list=User::all()->get();
+    }
 }
