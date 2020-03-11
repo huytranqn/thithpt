@@ -13,7 +13,9 @@
 //client route
 Route::get('/', 'Client\HomeController@index');
 //admin route
-Route::get('/admin', 'Auth\LoginController@getLogin');
+Route::get('/admin', 'Auth\LoginController@index');
+
+Route::get('/admin/login', 'Auth\LoginController@getLogin');
 
 Route::get('/admin/logout', 'Auth\LogoutController@getLogout');
 
@@ -21,7 +23,7 @@ Route::get('/admin/home', 'Admin\HomeController@index');
 
 Route::get('/admin/question', 'Admin\ExamController@index');
 
-Route::post('/admin', 'Auth\LoginController@postLogin');
+Route::post('/admin/login', 'Auth\LoginController@postLogin');
 
 Route::get('/admin/exam', 'Admin\ExamController@index');
 
