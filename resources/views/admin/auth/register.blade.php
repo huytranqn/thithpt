@@ -41,7 +41,7 @@
 					<h4 class="panel-title">ĐĂNG KÝ THÀNH VIÊN</h4>
 				</div>
 				<div class="panel-body">
-					<form role="form" method="POST" action="{{ url('/register') }}">
+					<form role="form" method="POST" action="">
 						{!! csrf_field() !!}
 						<div class="form-group">
 							<div class="input-group">

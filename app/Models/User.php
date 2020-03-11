@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -16,6 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
+        'username', 'password' ,
         'id','fullname', 'gender', 'namsinh','cmnd','list_subject'
     ];
 
@@ -24,9 +25,7 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $hidden = [
-        'username', 'password' ,'remember_token',
-    ];
+
 
     /**
      * The attributes that should be cast to native types.

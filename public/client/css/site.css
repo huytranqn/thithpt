@@ -807,3 +807,21 @@ body {
         display: unset !important
     }
 }
+
+#logo-img {
+    float: left;
+    margin-right: 10px;
+    min-height: 45px;
+    margin-top: 10px;
+    max-width: 70px;
+}
+
+#login-btn {
+    margin-top: 13px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #124e7a;
+    border-color: #124e7a;
+    color: #fff;
+    font-size: 17px
+}

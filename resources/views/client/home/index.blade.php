@@ -1,4 +1,4 @@
 @extends('client.share.master')
 @section('content')
-aaaaaaaaa
+{{$a}}
 @endsection()

@@ -11,7 +11,13 @@ class StudentController extends Controller
     public function index()
     {
         $data['student']=User::all();
+<<<<<<< HEAD
         return view('admin.student.student',[ 'title' => 'Học Sinh'],$data);      
+=======
+        //var_dump($data);
+        //$data['namsinh']=$data->namsinh->format('dd/mm/YYYY');
+        return view('admin.student.student',[ 'title' => 'Học Sinh'],$data);
+>>>>>>> d2f0e083594a9a2eefd627a6749f58db52a92e28
     }
 
     public function add()

@@ -12,16 +12,21 @@
     </ol>
 </section>
 
+<<<<<<< HEAD
 <section class="content">
     <div id="error_message">
 
     </div>
+=======
+
+>>>>>>> d2f0e083594a9a2eefd627a6749f58db52a92e28
     <div class="row">
         <div class="col-xs-12">
             <div class="box box-primary">
                 <div class="box-header" style="text-align: height: 50px;line-height: 50px;white-space: nowrap;">
                     <h3 class="box-title">Danh sách học sinh</h3>
                     <div class="pull-right">
+<<<<<<< HEAD
                         <div class="col-xs-9">
                             <form  method="post" enctype="multipart/form-data" id="file_form"> {{ csrf_field() }}
                                 <a class="btn btn-app ">
@@ -33,9 +38,16 @@
                         <div class="col-xs-3">
                             <a class="btn btn-app "><i class="glyphicon glyphicon-export"></i>Export</a>
                         </div>    
+=======
+                        <a class="btn btn-app ">
+                            <input type="file" id="exampleInputFile">
+                        </a>
+                        <a class="btn btn-app "><i class="glyphicon glyphicon-import"></i>Import</a>
+                    <a href="{{url('export_excel')}}" class="btn btn-app "><i class="glyphicon glyphicon-export"></i>Export</a>
+>>>>>>> d2f0e083594a9a2eefd627a6749f58db52a92e28
                     </div>
                 </div>
-
+                
                 <div class="box-body">
                     <table id="example1" class="table table-bordered table-hover">
                         <thead>
