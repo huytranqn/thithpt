@@ -42,4 +42,4 @@ Route::get('/admin/question', 'Admin\QuestionController@index');
 
 Route::get('/admin/question/addque', 'Admin\QuestionController@add');
 
-
+Route::get('export_excel', 'Admin\ExportExcelController@export');

@@ -9,4 +9,7 @@ class Student extends Model
     protected $fillable = [
         'id','fullname', 'gender', 'namsinh','cmnd','list_subject','isActive'
     ];
+    public function list_student(){
+        $list=Student::all()->get();
+    }
 }

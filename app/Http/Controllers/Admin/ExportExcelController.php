@@ -17,7 +17,7 @@ class ExportExcelController extends Controller
 
 }
 class DataExport implements FromCollection,WithHeadings{
-    
+
     function collection(){
         $data=Student::all();
         return $data;

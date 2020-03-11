@@ -31,11 +31,11 @@
                             </form>
                         </div>
                         <div class="col-xs-3">
-                            <a class="btn btn-app "><i class="glyphicon glyphicon-export"></i>Export</a>
-                        </div>    
+                            <a href="{{url('export_excel')}}" class="btn btn-app "><i class="glyphicon glyphicon-export"></i>Export</a>
+                        </div>
                     </div>
                 </div>
-                
+
                 <div class="box-body">
                     <table id="example1" class="table table-bordered table-hover">
                         <thead>
@@ -50,7 +50,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($student as $item )                               
+                            @foreach ($student as $item )
                                 <tr>
                                     <td>{{ $item->id}}</td>
                                     <td>{{ $item->fullname}}</td>
@@ -59,21 +59,21 @@
                                         @if ($item['gender']==1) Nam
                                         @else Nữ
                                         @endif
-                                     
+
                                     </td>
                                     <td>{{ $item->cmnd}}</td>
                                     <td>{{ $item->list_subject}} </td>
                                     <td>
                                         <i title="Sửa" class="fa fa-pencil-square-o" style="margin-right: 5px;margin-left: 5px;"></i>
-                                        
+
                                         @if ($item['isActive']==1) <i title=" Hiện " class="fa fa-eye"> </i>
                                         @else <i title=" Ẩn " class="fa fa-eye-slash"> </i>
                                         @endif
-                                        
+
                                         <i title=" Xóa " class="fa fa-trash-o " style="color: darkred; "></i>
                                     </td>
                                 </tr>
-                            @endforeach    
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
