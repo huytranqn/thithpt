@@ -45,10 +45,19 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
-    public function getLogin() {
+
+    public function index(Request $request){
+        if($request->session()->has('user')){
+            return redirect('admin/home');
+        }
+        else return redirect('admin/login');
+    }
+
+    public function getLogin(Request $request) {
 
         // $data['user']= User::all();
         // var_dump($data);
+        var_dump($data = $request->session()->all());
         return view('admin.auth.login',['title'=>'Login']);
     }
     public function postLogin(Request $request) {
@@ -80,13 +89,20 @@ class LoginController extends Controller
 
             if( Auth::attempt((array('username' => $username, 'password' => $password))))
             {
+                // if(Auth::check())
+                // {
+                //     return "aaaaaaaa";
+                    // return Auth::user()->type;
+                // }
+
                 if(Auth::user()->type==1){
                     // Kiểm tra đúng email và mật khẩu sẽ chuyển trang
                     return redirect('admin/home');
                 }
-                elseif (Auth::user()->type==2)
+                else
                 {
-                    return redirect('admin');
+                    //return "permission";
+                    return redirect('/');
                 }
             } else {
                 // Kiểm tra không đúng sẽ hiển thị thông báo lỗi

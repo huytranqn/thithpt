@@ -91,7 +91,7 @@
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
             <input type="submit" class="btn btn-lg btn-primary btn-block" id="btn_login" value="Đăng nhập">
-            {{-- {!! csrf_field() !!} --}}
+            {!! csrf_field() !!}
         </form>
     </div>
 </div>
