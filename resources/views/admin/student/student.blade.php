@@ -12,7 +12,7 @@
     </ol>
 </section>
 
-<section class="content">
+
     <div class="row">
         <div class="col-xs-12">
             <div class="box box-primary">
@@ -29,10 +29,10 @@
                             <input type="file" id="exampleInputFile">
                         </a>
                         <a class="btn btn-app "><i class="glyphicon glyphicon-import"></i>Import</a>
-                        <a class="btn btn-app "><i class="glyphicon glyphicon-export"></i>Export</a>
+                    <a href="{{url('export_excel')}}" class="btn btn-app "><i class="glyphicon glyphicon-export"></i>Export</a>
                     </div>
                 </div>
-
+                
                 <div class="box-body">
                     <table id="example1" class="table table-bordered table-hover">
                         <thead>

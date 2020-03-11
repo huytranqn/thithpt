@@ -41,5 +41,6 @@ Route::get('model/select-all', function () {
     print_r($data);
     echo"<pre>";
 });
+Route::get('export_excel', 'Admin\ExportExcelController@export');
 
 
