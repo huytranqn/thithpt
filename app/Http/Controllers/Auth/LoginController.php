@@ -78,10 +78,16 @@ class LoginController extends Controller
             //     'password' => $request['password'],
             // ];
 
-            if( Auth::attempt((array('username' => $username, 'password' => $password)))){
-            // if($username==='hanh' && $password==='1234') {
-                // Kiểm tra đúng email và mật khẩu sẽ chuyển trang
-                return redirect('admin/home');
+            if( Auth::attempt((array('username' => $username, 'password' => $password))))
+            {
+                if(Auth::user()->type==1){
+                    // Kiểm tra đúng email và mật khẩu sẽ chuyển trang
+                    return redirect('admin/home');
+                }
+                elseif (Auth::user()->type==2)
+                {
+                    return redirect('admin');
+                }
             } else {
                 // Kiểm tra không đúng sẽ hiển thị thông báo lỗi
                 Session::flash('error', 'Tên đăng nhập hoặc mật khẩu không đúng!');

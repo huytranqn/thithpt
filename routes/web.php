@@ -15,7 +15,7 @@ Route::get('/', 'Client\HomeController@index');
 //admin route
 Route::get('/admin', 'Auth\LoginController@getLogin');
 
-// Route::get('/admin', 'Auth\LoginController@getLogout');
+Route::get('/admin/logout', 'Auth\LogoutController@getLogout');
 
 Route::get('/admin/home', 'Admin\HomeController@index');
 
