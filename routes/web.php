@@ -13,11 +13,15 @@
 //client route
 Route::get('/', 'Client\HomeController@index');
 //admin route
-Route::get('/admin/', 'Auth\LoginController@getLogin');
+Route::get('/admin', 'Auth\LoginController@getLogin');
+
+Route::get('/admin/logout', 'Auth\LogoutController@getLogout');
 
 Route::get('/admin/home', 'Admin\HomeController@index');
 
 Route::get('/admin/question', 'Admin\ExamController@index');
+
+Route::post('/admin', 'Auth\LoginController@postLogin');
 
 Route::get('/admin/exam', 'Admin\ExamController@index');
 
@@ -26,6 +30,8 @@ Route::get('/admin/listexam', 'Admin\ExamController@listexam');
 Route::get('/admin/subject', 'Admin\SubjectController@index');
 
 Route::get('/admin/subject/addsub', 'Admin\SubjectController@add');
+
+Route::get('/subject', 'subjectController@index');
 
 Route::get('/admin/student', 'Admin\StudentController@index');
 
