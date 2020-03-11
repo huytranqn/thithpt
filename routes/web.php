@@ -32,18 +32,12 @@ Route::get('/admin/subject/addsub', 'Admin\SubjectController@add');
 Route::get('/subject', 'subjectController@index');
 
 Route::get('/admin/student', 'Admin\StudentController@index');
+Route::post('/admin/student/importfile', 'Admin\StudentController@importfile');
 
 Route::get('/admin/student/addstu', 'Admin\StudentController@add');
 
 Route::get('/admin/question', 'Admin\QuestionController@index');
 
 Route::get('/admin/question/addque', 'Admin\QuestionController@add');
-
-Route::get('model/select-all', function () {
-    $data=App\User::all()->tojSON();
-    echo"<pre>";
-    print_r($data);
-    echo"<pre>";
-});
 
 

@@ -13,23 +13,26 @@
 </section>
 
 <section class="content">
+    <div id="error_message">
+
+    </div>
     <div class="row">
         <div class="col-xs-12">
             <div class="box box-primary">
-                {{-- <div class="box-header with-border">
-                    <h3 class="box-title">Danh sách học sinh</h3>
-                    <div class="pull-right">
-                        <a href="{{ asset ('/student/addstu ') }}" class="btn btn-info "> <i class="fa  fa-plus"></i> Thêm mới</a>
-                    </div>
-                </div> --}}
                 <div class="box-header" style="text-align: height: 50px;line-height: 50px;white-space: nowrap;">
                     <h3 class="box-title">Danh sách học sinh</h3>
                     <div class="pull-right">
-                        <a class="btn btn-app ">
-                            <input type="file" id="exampleInputFile">
-                        </a>
-                        <a class="btn btn-app "><i class="glyphicon glyphicon-import"></i>Import</a>
-                        <a class="btn btn-app "><i class="glyphicon glyphicon-export"></i>Export</a>
+                        <div class="col-xs-9">
+                            <form  method="post" enctype="multipart/form-data" id="file_form"> {{ csrf_field() }}
+                                <a class="btn btn-app ">
+                                    <input type="file" id="inputFile" name="inputFile">
+                                </a>
+                                <a id ="btn_import" class="btn btn-app btn_import"><i class="glyphicon glyphicon-import"></i>Import</a>
+                            </form>
+                        </div>
+                        <div class="col-xs-3">
+                            <a class="btn btn-app "><i class="glyphicon glyphicon-export"></i>Export</a>
+                        </div>    
                     </div>
                 </div>
 
@@ -47,9 +50,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            
-                            @foreach ($student as $item )
-                                
+                            @foreach ($student as $item )                               
                                 <tr>
                                     <td>{{ $item->id}}</td>
                                     <td>{{ $item->fullname}}</td>
