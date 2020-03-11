@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\User;
+use App\Models\Admin\Student;
 use Excel;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
@@ -19,7 +19,7 @@ class ExportExcelController extends Controller
 class DataExport implements FromCollection,WithHeadings{
     
     function collection(){
-        $data=User::all();
+        $data=Student::all();
         return $data;
     }
     public function headings(): array
