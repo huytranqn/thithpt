@@ -4,13 +4,13 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Admin\User ;
+use App\Models\Admin\Student ;
 
 class StudentController extends Controller
 {
     public function index()
     {
-        $data['student']=User::all();
+        $data['student']=Student::all();
         return view('admin.student.student',[ 'title' => 'Học Sinh'],$data);      
     }
 

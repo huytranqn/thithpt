@@ -42,15 +42,4 @@ Route::get('/admin/question', 'Admin\QuestionController@index');
 
 Route::get('/admin/question/addque', 'Admin\QuestionController@add');
 
-<<<<<<< HEAD
-=======
-Route::get('model/select-all', function () {
-    $data=App\User::all()->tojSON();
-    echo"<pre>";
-    print_r($data);
-    echo"<pre>";
-});
-Route::get('export_excel', 'Admin\ExportExcelController@export');
-
->>>>>>> d2f0e083594a9a2eefd627a6749f58db52a92e28
 

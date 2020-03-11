@@ -493,10 +493,6 @@ class ComposerStaticInit3240126e868da42c6cec2e735ae8d45a
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Admin\\ExamController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ExamController.php',
-<<<<<<< HEAD
-=======
-        'App\\Http\\Controllers\\Admin\\ExportExcelController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ExportExcelController.php',
->>>>>>> d2f0e083594a9a2eefd627a6749f58db52a92e28
         'App\\Http\\Controllers\\Admin\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/HomeController.php',
         'App\\Http\\Controllers\\Admin\\QuestionController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/QuestionController.php',
         'App\\Http\\Controllers\\Admin\\StudentController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/StudentController.php',
