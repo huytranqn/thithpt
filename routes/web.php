@@ -33,7 +33,7 @@ Route::get('/admin/subject', 'Admin\SubjectController@index');
 
 Route::get('/admin/subject/addsub', 'Admin\SubjectController@add');
 
-Route::get('/subject', 'subjectController@index');
+Route::get('/subject', 'SubjectController@index');
 
 Route::get('/admin/student', 'Admin\StudentController@index');
 
@@ -46,3 +46,5 @@ Route::get('/admin/question', 'Admin\QuestionController@index');
 Route::get('/admin/question/addque', 'Admin\QuestionController@add');
 
 Route::get('export_excel', 'Admin\ExportExcelController@export');
+
+Route::post('/admin/subject','Admin\SubjectController@doUpLoad');

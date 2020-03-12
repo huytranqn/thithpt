@@ -22,16 +22,37 @@
                             <a href="{{ asset ('/subject/addsub ') }}" class="btn btn-info "> <i class="fa  fa-plus"></i> Thêm mới</a>
                         </div>
                     </div> --}}
-                    <div class="box-header" style="text-align: height: 50px;line-height: 50px;white-space: nowrap;">
-                        <h3 class="box-title">Danh sách môn học</h3>
-                        <div class="pull-right">
-                            <a class="btn btn-app ">
-                                <input type="file" id="exampleInputFile">
-                            </a>
-                            <a class="btn btn-app "><i class="glyphicon glyphicon-import"></i>Import</a>
-                            <a class="btn btn-app "><i class="glyphicon glyphicon-export"></i>Export</a>
+
+                    @if(count($errors) > 0)
+                        <div class="alert alert-danger">
+                            Upload Validation Error<br><br>
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
                         </div>
-                    </div>
+                    @endif
+                    @if($message = Session::get('success'))
+                        <div class="alert alert-success alert-block">
+                            <button type="button" class="close" data-dismiss="alert">×</button>
+                                <strong>{{ $message }}</strong>
+                        </div>
+                    @endif
+
+                    <form action="{{ url('admin/subject') }}" enctype="multipart/form-data" method="POST">
+                        {{ csrf_field() }}
+                        <div class="box-header" style="text-align: height: 50px;line-height: 50px;white-space: nowrap;">
+                            <h3 class="box-title">Danh sách môn học</h3>
+                            <div class="pull-right">
+                                <a class="btn btn-app ">
+                                    <input type="file" name="select_file" id="exampleInputFile">
+                                </a>
+                                <input type="submit" class="btn btn-app " value="Import"/><i class="glyphicon glyphicon-import"></i>
+                                {{-- <a class="btn btn-app "><i class="glyphicon glyphicon-export"></i>Export</a> --}}
+                            </div>
+                        </div>
+                    </form>
 
                     <div class="box-body">
                         <table id="example1" class="table table-bordered table-hover">
@@ -46,107 +67,24 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($subject as $item )
                                 <tr>
-                                    <td>qq</td>
-                                    <td>Internet Explorer 4.0
-                                    </td>
-                                    <td>Win 95+</td>
-                                    <td> 4</td>
+                                    <td>{{ $item->id}}</td>
+                                    <td>{{ $item->name}}</td>
+                                    <td>{{ $item->created_at}}</td>
+                                    <td>{{ $item->updated_at}}</td>
                                     <td>
                                         <i title="Sửa" class="fa fa-pencil-square-o" style="margin-right: 5px;margin-left: 5px;"></i>
-                                        <i title=" Hiện " class="fa fa-eye"> </i>
-                                        <i title=" Ẩn " class="fa fa-eye-slash"> </i>
+
+                                        @if ($item['isActive']==1) <i title=" Hiện " class="fa fa-eye"> </i>
+                                        @else <i title=" Ẩn " class="fa fa-eye-slash"> </i>
+                                        @endif
+
                                         <i title=" Xóa " class="fa fa-trash-o " style="color: darkred; "></i>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>cc</td>
-                                    <td>Internet Explorer 5.0
-                                    </td>
-                                    <td>Win 95+</td>
-                                    <td>5</td>
-                                    <td>C</td>
-                                </tr>
-                                <tr>
-                                    <td>cc</td>
-                                    <td>Internet Explorer 5.0
-                                    </td>
-                                    <td>Win 95+</td>
-                                    <td>5</td>
-                                    <td>C</td>
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>cc
-                                    </td>
-                                    <td>Win 95+</td>
-                                    <td>5</td>
-                                    <td>C</td>
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 5.0
-                                    </td>
-                                    <td>Win 95+</td>
-                                    <td>5</td>
-                                    <td>C</td>
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 5.0
-                                    </td>
-                                    <td>Win 95+</td>
-                                    <td>5</td>
-                                    <td>C</td>
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 5.0
-                                    </td>
-                                    <td>Win 95+</td>
-                                    <td>5</td>
-                                    <td>C</td>
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 5.0
-                                    </td>
-                                    <td>Win 95+</td>
-                                    <td>5</td>
-                                    <td>C</td>
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 5.0
-                                    </td>
-                                    <td>Win 95+</td>
-                                    <td>5</td>
-                                    <td>C</td>
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 5.0
-                                    </td>
-                                    <td>Win 95+</td>
-                                    <td>5</td>
-                                    <td>C</td>
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 5.0
-                                    </td>
-                                    <td>Win 95+</td>
-                                    <td>5</td>
-                                    <td>C</td>
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 5.0
-                                    </td>
-                                    <td>Win 95+</td>
-                                    <td>5</td>
-                                    <td>C</td>
-                                </tr>
+                            
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

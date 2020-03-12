@@ -12,7 +12,10 @@
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^6.2",
         "laravel/tinker": "^2.0",
+<<<<<<< HEAD
+=======
         "phpoffice/phpexcel": "^1.8",
+>>>>>>> 40f77c85d1f1f2ea4f16e6e6d0b6f9ef99210d3a
         "maatwebsite/excel": "^3.1"
     },
     "require-dev": {
