@@ -79,7 +79,7 @@
                 <!-- /.col -->
             </div>
         </div>
-        <form role="form" method="POST">
+    <form role="form" method="POST" action="{{url('admin/login')}}">
             <div class="form-group has-feedback">
                 {{-- <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> --}}
                 <input class="form-control" placeholder="Username" name="username" id="username" type="text" value="{{ old('username') }}" autofocus>

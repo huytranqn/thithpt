@@ -17,13 +17,13 @@ Route::get('/admin', 'Auth\LoginController@index');
 
 Route::get('/admin/login', 'Auth\LoginController@getLogin');
 
+Route::post('/admin/login', 'Auth\LoginController@postLogin');
+
 Route::get('/admin/logout', 'Auth\LogoutController@getLogout');
 
 Route::get('/admin/home', 'Admin\HomeController@index');
 
 Route::get('/admin/question', 'Admin\ExamController@index');
-
-Route::post('/admin/login', 'Auth\LoginController@postLogin');
 
 Route::get('/admin/exam', 'Admin\ExamController@index');
 
@@ -36,6 +36,7 @@ Route::get('/admin/subject/addsub', 'Admin\SubjectController@add');
 Route::get('/subject', 'subjectController@index');
 
 Route::get('/admin/student', 'Admin\StudentController@index');
+
 Route::post('/admin/student/importfile', 'Admin\StudentController@importfile');
 
 Route::get('/admin/student/addstu', 'Admin\StudentController@add');

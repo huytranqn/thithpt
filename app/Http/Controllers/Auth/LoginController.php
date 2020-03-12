@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Session;
-use App\User ;
+use App\Student ;
 use Symfony\Component\HttpFoundation\Session\Session as HttpFoundationSessionSession;
 
 class LoginController extends Controller
@@ -57,10 +57,11 @@ class LoginController extends Controller
 
         // $data['user']= User::all();
         // var_dump($data);
-        var_dump($data = $request->session()->all());
+        //var_dump($data = $request->session()->all());
         return view('admin.auth.login',['title'=>'Login']);
     }
     public function postLogin(Request $request) {
+        echo "abc";
         // Kiểm tra dữ liệu nhập vào
         $rules = [
             'username' =>'required',
