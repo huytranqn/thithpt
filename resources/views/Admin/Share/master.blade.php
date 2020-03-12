@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="csrf-token" content="{{ csrf_token() }}" />
-  <title>Admin | {{ $title }}</title>
+  <title>Admin | @yield('title')</title>
+  <link rel="shortcut icon" type="image/png" href="{{ asset ('admin/upload/favicon.ico') }}" />
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -294,8 +295,6 @@
 <!-- iCheck -->
 <script src="{{ asset ('admin/plugins/iCheck/icheck.min.js')}}"></script>
 <!-- page script -->
-<script src="{{ asset ('resources/js/student.js') }}"></script>
-
 <script src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js"></script>
@@ -303,14 +302,21 @@
 
 <script>
     $(function() {
-      $('#example1').DataTable()
-      $('#example2').DataTable({
-            'paging': true,
-            'lengthChange': false,
-            'searching': false,
-            'ordering': true,
-            'info': true,
-            'autoWidth': false
+      $('#example2').DataTable()
+      $('#example1').DataTable({
+        "language":{
+          "lengthMenu":     "Hiển thị _MENU_ kết quả",
+          "emptyTable":     "Vui lòng thêm dữ liệu !",
+          "info":           "Hiển thị _START_ từ _END_ của _TOTAL_ kết quả",
+          "infoEmpty":      "Hiển thị 0 đến 0 của 0 kết quả",
+          "search":         "Tìm kiếm:",
+          "paginate": {
+              "first":      "Đầu",
+              "last":       "Cuối",
+              "next":       "Tiến",
+              "previous":   "Lùi"
+          },
+        }
         })
         $('input').iCheck({
             checkboxClass: 'icheckbox_square-blue',

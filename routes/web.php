@@ -17,3 +17,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/admin/home', 'Admin\HomeController@index');
+
+Route::get('/admin/question', 'Admin\ExamController@index');
+
+Route::get('/admin/exam', 'Admin\ExamController@index');
+
+Route::get('/admin/listexam', 'Admin\ExamController@listexam');
+
+Route::get('/admin/subject', 'Admin\SubjectController@index');
+
+Route::get('/admin/student', 'Admin\StudentController@index');
+
+Route::get('/admin/question', 'Admin\QuestionController@index');
