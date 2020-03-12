@@ -297,18 +297,7 @@
 <!-- iCheck -->
 <script src="{{ asset ('public/admin/plugins/iCheck/icheck.min.js')}}"></script>
 <!-- page script -->
-<<<<<<< HEAD
 <script src="{{ asset ('resources/js/student.js') }}"></script>
-=======
-
-
-
-<script src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.print.min.js"></script>
-
->>>>>>> d2f0e083594a9a2eefd627a6749f58db52a92e28
 <script>
     $(function() {
       $('#example1').DataTable()
