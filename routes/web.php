@@ -29,13 +29,14 @@ Route::get('/admin/exam', 'Admin\ExamController@index');
 
 Route::get('/admin/listexam', 'Admin\ExamController@listexam');
 
-Route::get('/admin/subject', 'Admin\SubjectController@index');
+
 
 Route::get('/admin/subject/addsub', 'Admin\SubjectController@add');
 
-Route::get('/subject', 'SubjectController@index');
+
 
 Route::get('/admin/student', 'Admin\StudentController@index');
+
 Route::post('/admin/student/importfile', 'Admin\StudentController@importfile');
 
 Route::get('/admin/student/addstu', 'Admin\StudentController@add');
@@ -46,4 +47,13 @@ Route::get('/admin/question/addque', 'Admin\QuestionController@add');
 
 Route::get('export_excel', 'Admin\ExportExcelController@export');
 
-Route::post('/admin/subject','Admin\SubjectController@doUpLoad');
+// Route::get('/admin/subject', 'Admin\SubjectController@index');
+
+// Route::post('/admin/subject','Admin\SubjectController@doUpLoad');
+
+Route::prefix('admin')->group(function () {
+    Route::get('subject', 'Admin\SubjectController@index');
+    // Route::post('subject','Admin\SubjectController@doUpLoad');
+    Route::post('subject','Admin\SubjectController@doInsert')->name('insert');
+    
+});

@@ -33,4 +33,11 @@ class SubjectController extends Controller
         }
         return back();
     }
+
+    public function doInsert(Request $request){
+        echo "abc";
+        echo $request->get('name');
+        return back();  
+    }
+
 }

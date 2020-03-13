@@ -49,11 +49,11 @@
                                     <input type="file" name="select_file" id="exampleInputFile">
                                 </a>
                                 <input type="submit" class="btn btn-app " value="Import"/><i class="glyphicon glyphicon-import"></i>
-                                {{-- <a class="btn btn-app "><i class="glyphicon glyphicon-export"></i>Export</a> --}}
+                                
                             </div>
                         </div>
                     </form>
-
+                    <button class="btn btn-app" id="add">Add</button>
                     <div class="box-body">
                         <table id="example1" class="table table-bordered table-hover">
                             <thead>
@@ -99,3 +99,4 @@
     <!-- /.content -->
 
 @endsection()
+    
